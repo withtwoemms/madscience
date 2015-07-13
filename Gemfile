@@ -44,6 +44,9 @@ group :development, :test do
   # Use rspec-rails to automatically generate RSpec framework
   gem 'rspec-rails', '~> 3.0'
 
+  # Use capybara to generate fake info for features tests
+  gem 'capybara'
+
   # Use SimpleCov for determining code coverage
   gem 'simplecov', '>= 0.9', :require => false
 end
