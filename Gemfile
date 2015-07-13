@@ -47,6 +47,9 @@ group :development, :test do
   # Use capybara to generate fake info for features tests
   gem 'capybara'
 
+  # Use factory_girl to generate test factories
+  gem 'factory_girl_rails'
+
   # Use SimpleCov for determining code coverage
   gem 'simplecov', '>= 0.9', :require => false
 end
