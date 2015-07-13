@@ -41,6 +41,9 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
+  # Use rspec-rails to automatically generate RSpec framework
+  gem 'rspec-rails', '~> 3.0'
+
   # Use SimpleCov for determining code coverage
   gem 'simplecov', '>= 0.9', :require => false
 end
