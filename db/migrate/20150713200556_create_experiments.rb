@@ -4,7 +4,7 @@ class CreateExperiments < ActiveRecord::Migration
       t.string      :name
       t.text        :results
       t.text        :conclusion
-      t.references  :proposal
+      t.references  :project
       t.references  :experimenter
 
       t.timestamps
