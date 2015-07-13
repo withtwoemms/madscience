@@ -5,6 +5,7 @@ class CreateExperiments < ActiveRecord::Migration
       t.text        :results
       t.text        :conclusion
       t.references  :proposal
+      t.references  :experimenter
 
       t.timestamps
     end
