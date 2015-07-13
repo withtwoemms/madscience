@@ -1,0 +1,16 @@
+Use RSpec with factory_girl and capybara
+Remove turbolinks and coffee-rails
+Use TravisCI
+Set up global_gitignore (ignore database.yml file and log files)
+
+README:
+  Team name
+  Team members
+  User Stories
+  Link to Trello
+
+CONTRIBUTING:
+  Norms
+  Code style
+  Agreements on code review and pull requests
+
