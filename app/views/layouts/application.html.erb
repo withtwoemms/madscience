@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ClientProjectChallenge</title>
+  <title>Aly University Lab Experiment Tracker</title>
+  <%= stylesheet_link_tag    'normalize', media: 'all' %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <%= yield %>
-  <%= link_to "Log out", logout_path, method: "delete" %>
+  <%= render "header" %>
+  <%= render "nav" %>
+  <div class="container">
+    <%= yield %>
+  </div>
 </body>
 </html>

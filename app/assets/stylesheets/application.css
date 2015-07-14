@@ -1,15 +1,395 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* --------------------------------------- Global attributes */
+
+html, body {
+  overflow-x: hidden;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------- Layout: General sections */
+
+.container {
+  margin: 0 auto;
+  width: 900px;
+}
+
+header {
+  background-color: black;
+  text-align: left;
+  margin: 0 -9999rem;
+  padding: 0.25rem 9999rem;
+}
+
+nav {
+  width: 100%;
+  padding: 2em 0 2em 0;
+  text-align: left;
+}
+
+/*.main {
+  width: 700px;
+  padding: 0 2em 0 0;
+}*/
+
+/*.sidebar {
+  position: relative;
+  width: 200px;
+  padding: 0 1em 0 1em;
+  text-align: left;
+  float: right;
+  background-color: orange;
+  font-size: 0.75em;
+  border: 1px solid gray;
+}*/
+
+/* --------------------------------------- Layout: gray navigation menu */
+
+.nav-menu {
+  float: right;
+}
+
+.nav-menu li {
+  display: inline-block;
+  color: white;
+  padding: 0.4em;
+  background-color: #ccc;
+  margin: 0.1em;
+}
+
+.nav-menu a {
+  color: white;
+}
+
+.nav-menu a:visited {
+  color: white;
+}
+
+.nav-menu a:hover {
+  color: DarkSalmon;
+}
+
+/* --------------------------------------- Layout: tabs on index page */
+
+/*.tabs {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 16px;
+  float: right;
+}
+
+.tabs li {
+  float: right;
+  display: inline-block;
+  margin-right: 1em;
+  padding: 2px 10px 0 15px;
+  height: 30px;
+  line-height: 30px;
+  list-style: none;
+  font-size: 0.75em;
+  vertical-align: bottom;
+}
+.tabs li a {
+    color: #666;
+    text-decoration: none;
+}
+
+.tabs li.active {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-top: 2px solid orange;
+    border-bottom: 1px solid white;
+    margin-bottom: -1px;
+    height: 31px;
+    padding: 0px 9px 0 14px;
+}
+
+.tabs li.active a {
+    color: black;
+    text-decoration: none;
+    border-bottom: none;
+}*/
+
+.tabs {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  float: right;
+  margin-bottom: 1em;
+}
+
+.tabs li {
+  float: right;
+  display: inline-block;
+  margin-right: 1em;
+  padding: 2px 10px 0 15px;
+  height: 30px;
+  line-height: 30px;
+  list-style: none;
+  font-size: 0.75em;
+  vertical-align: bottom;
+}
+.tabs li a {
+    color: #666;
+    text-decoration: none;
+}
+
+.tabs li a:hover {
+    color: DarkRed;
+}
+
+.tabs li.active {
+    border: 1px solid #ccc;
+    margin-bottom: -1px;
+    height: 31px;
+    padding: 0px 9px 0 14px;
+    background-color: DarkRed;
+    color: white;
+}
+
+.tabs li.active a {
+    color: black;
+    text-decoration: none;
+    border-bottom: none;
+}
+
+/* --------------------------------------- Layout: questions, answers and comments */
+
+.questiontitle {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  padding: 0 0 0.5em 0;
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+.questionbody {
+  position: relative;
+  margin-left: 70px;
+  border-bottom: 1px solid #ccc;
+}
+
+.answertitle {
+  width: 100%;
+  padding: 0;
+  font-size: 1em;
+  margin: 1em 0 1em 0;
+}
+
+.answerbody {
+  position: relative;
+  margin-left: 70px;
+  border-bottom: 1px solid #ccc;
+  padding: 0 0 0.5em 0;
+  margin-bottom: 1em;
+}
+
+#best_answer {
+  border: 2px solid red;
+}
+
+.observationbody {
+  border-bottom: 1px solid #ccc;
+  padding: 1em;
+  margin-bottom: 1em;
+  font-size: 0.75em;
+}
+
+/*.commenttitle {
+  width: 100%;
+  padding: 0;
+  font-size: 0.75em;
+  margin: 0;
+}*/
+
+.commentbody {
+  border-bottom: 1px solid #ccc;
+  padding: 1em;
+  margin-bottom: 1em;
+  font-size: 0.5em;
+}
+
+.commentobservation {
+  border-bottom: 1px solid #ccc;
+  padding: 0 1em 1em 3em;
+  margin-bottom: 1em;
+  font-size: 0.5em;
+  color: DimGray;
+}
+
+/* --------------------------------------- Layout: Everything else */
+
+.listing {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  padding: 0em;
+}
+
+.title {
+  width: 100%;
+  font-weight: bold;
+  font-size: 2em;
+  padding: 0em;
+}
+
+.titlesmall {
+  width: 100%;
+  font-weight: bold;
+  font-size: 1em;
+  padding: 0em;
+}
+
+/*.statbox {
+  float: left;
+  text-align: center;
+  margin: 0 20px 0 0;
+  width: 50px;
+}*/
+
+/*.highlight {
+  background-color: green;
+  color: white;
+}*/
+
+.fineprint {
+  text-align: right;
+  font-size: 0.75em;
+  color: #ccc;
+  vertical-align: bottom;
+}
+
+.logout {
+  border      : 0;
+  background  : transparent;
+  font-family : inherit;
+  font-size   : 1em;
+  cursor      : pointer;
+}
+
+/*.votebox {
+  position: absolute;
+  text-align: center;
+  margin: 0;
+  width: 50px;
+}
+
+.votebox input {
+  border      : 0;
+  background  : transparent;
+  font-family : inherit;
+  font-size   : 1em;
+  cursor      : pointer;
+}*/
+
+.submit {
+  background-color: #888;
+  color: white;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  text-decoration: none;
+  width: 100px;
+  text-align: center;
+}
+
+.posterbox {
+  text-align: right;
+  padding: 0.3em;
+  background-color: Lavender;
+  font-size: 0.75em;
+}
+
+.edit {
+  border      : 0;
+  background  : transparent;
+  font-family : inherit;
+  font-size   : 0.5;
+  cursor      : pointer;
+}
+
+/* --------------------------------------- Links */
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: LightBlue;
+}
+
+a:visited {
+  color: DarkBlue;
+}
+
+nav a {
+  color: white;
+}
+
+nav a:visited {
+  color: white;
+}
+
+.white a {
+  color: orange;
+}
+
+.white a:visited {
+  color: orange;
+}
+
+.white a:hover {
+  color: OrangeRed;
+}
+
+/* --------------------------------------- Atomic-style attributes */
+
+.white {
+  color: white;
+}
+
+.black {
+  color: black;
+}
+
+.fl-l {
+  float: left;
+}
+
+.fl-r {
+  float: right;
+}
+
+.smallest {
+  font-size: 0.5em;
+}
+
+.inline {
+  display: inline;
+}
+
+.clear {
+  clear: left;
+}
+
+.debug {
+  border: 1px solid red;
+}
+
+textarea {
+  width: 100%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.logo {
+  color: LightBlue;
+  font-size: 0.75em;
+}
+
+.bold {
+  font-weight: bold;
+}

@@ -1,4 +1,0 @@
-Use RSpec with factory_girl and capybara
-
-For SimpleCov:
-After running tests, visit coverage/index.html in browser to see coverage

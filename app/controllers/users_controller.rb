@@ -5,8 +5,8 @@ class UsersController < ApplicationController
 	end
 
 	# def show
-	# 	@user
-	# 	render "users/show"
+	# 	# @user
+  #   # erb :"show"
 	# end
 
   def new
@@ -29,12 +29,8 @@ class UsersController < ApplicationController
 
 
     if @new_user.save
-      # flash[:notice] = "You signed up successfully"
-      # flash[:color]= "valid"
       redirect_to :controller => "sessions", :action =>"create"
     else
-      # flash[:notice] = "Form is invalid"
-      # flash[:color]= "invalid"
     	render "new"
     end
   end
