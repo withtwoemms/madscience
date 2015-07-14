@@ -4,7 +4,7 @@ A DBC project by Joe Awad, Emmanuel Obi and Jason Pettus
 
 [Public scrum board at Trello]: https://trello.com/b/JfbTCBPv/lab-experiment-tracker
 
-[![Build Status](https://travis-ci.org/withtwoemms/madscience.svg)](https://travis-ci.org/withtwoemms/madscience)
+[![Build Status](https://travis-ci.org/withtwoemms/madscience.svg)](https://travis-ci.org/withtwoemms/madscience) [![Coverage Status](https://coveralls.io/repos/withtwoemms/madscience/badge.svg?branch=master&service=github)](https://coveralls.io/github/withtwoemms/madscience?branch=master)
 
 ### User Stories
 
@@ -23,3 +23,5 @@ A DBC project by Joe Awad, Emmanuel Obi and Jason Pettus
   * Post an experiment associated with a proposal, containing procedures, observations, results and conclusions
   * Make outside observations on other staff members' experiment procedures
   * Make comments on experiment proposals, procedures, observations, results and conclusions
+
+Dummy line
