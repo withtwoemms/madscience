@@ -1,33 +1,9 @@
 <p class="title">Projects</p>
 
 <% @projects.each do |project| %>
-
+  <div class="listing">
+    <p><%= link_to project.name, project_path(:id) %></p>
+    <p>Author: <%= link_to project.creator, user_path(:id) %>
+    <p class="fineprint"><%= project.experiments.count %> experiments posted</p>
+  </div>
 <% end %>
-
-
-
-<div class="listing">
-  <p><a href="testprojectshow.html">Effects of alcohol and cigarettes on lonely 19-year-olds</a></p>
-  <p>Author: <a href="johnsmith.html">Dr. John Smith</a></p>
-  <p class="fineprint">2 experiments posted</p>
-</div>
-<div class="listing">
-  <p><a href="testprojectshow.html">Effects of alcohol and cigarettes on lonely 19-year-olds</a></p>
-  <p>Author: <a href="johnsmith.html">Dr. John Smith</a></p>
-  <p class="fineprint">2 experiments posted</p>
-</div>
-<div class="listing">
-  <p><a href="testprojectshow.html">Effects of alcohol and cigarettes on lonely 19-year-olds</a></p>
-  <p>Author: <a href="johnsmith.html">Dr. John Smith</a></p>
-  <p class="fineprint">2 experiments posted</p>
-</div>
-<div class="listing">
-  <p><a href="testprojectshow.html">Effects of alcohol and cigarettes on lonely 19-year-olds</a></p>
-  <p>Author: <a href="johnsmith.html">Dr. John Smith</a></p>
-  <p class="fineprint">2 experiments posted</p>
-</div>
-<div class="listing">
-  <p><a href="testprojectshow.html">Effects of alcohol and cigarettes on lonely 19-year-olds</a></p>
-  <p>Author: <a href="johnsmith.html">Dr. John Smith</a></p>
-  <p class="fineprint">2 experiments posted</p>
-</div>

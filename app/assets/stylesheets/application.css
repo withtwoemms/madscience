@@ -19,7 +19,7 @@ html, body {
 
 header {
   background-color: black;
-  text-align: right;
+  text-align: left;
   margin: 0 -9999rem;
   padding: 0.25rem 9999rem;
 }
