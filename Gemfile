@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Temporarily use Faker to make seeds for testing (will get rid of later)
+gem 'faker'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
