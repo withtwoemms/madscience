@@ -11,5 +11,5 @@ FactoryGirl.define do
     factory :staff_project, class: Project do
       association :creator, factory: :staff_user
     end
-end
+  end
 end

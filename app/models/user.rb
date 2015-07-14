@@ -10,13 +10,13 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  validates :email, presence: true, 
-  									uniqueness: true, 
-  									length: { maximum: 255 }, 
+  validates :email, presence: true,
+  									uniqueness: true,
+  									length: { maximum: 255 },
   									format: { with: /\A[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+\z/ }
 
 
-  def full_name 
+  def full_name
   	"#{self.first_name} #{self.last_name}"
   end
 end
