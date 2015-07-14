@@ -5,8 +5,8 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@user
-		render "users/show"
+		# @user
+		# render "users/show"
 	end
 
   def new
@@ -17,11 +17,12 @@ class UsersController < ApplicationController
   # 	# user profile
   # end
 
-  def create # FACULTY ONLY -- need faculty code to authorize creation
+  def create # FACULTY ONLY -- need faculty code to authorize
   	# new faculty
   	@user = User.new(user_params)
-  	@position = "faculty"
+  	@user.position = Position.new(title: "faculty")
     if @user.save
+    	 @user.position.save
       flash[:notice] = "You signed up successfully"
       flash[:color]= "valid"
       redirect_to show

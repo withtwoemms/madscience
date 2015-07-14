@@ -1,13 +1,22 @@
-<% @page_title = "Faculty Signup" %>
+<% provide :title, "Faculty Signup" %>
 <div class="signup_form">
   <h1>Faculty Sign Up</h1>
   <%= form_for :user, :url => { :controller => 'users', :action => 'create' } do |f| %>
-    <p> First Name:</br> <%= f.text_field :first_name %> </p>
-    <p> Last Name:</br> <%= f.text_field :last_name %> </p>
-    <p> Email:</br> <%= f.text_field :email %> </p>
-    <p> Password:</br> <%= f.password_field :password %></p>
-    <p> Password Confirmation:</br> <%= f.password_field :password_confirmation %> </p>
-    <%= hidden_field :user, :position %>
+  	<%= f.label :first_name %>
+  	<%= f.text_field :first_name %>
+
+    <%= f.label :last_name %> 
+    <%= f.text_field :last_name %> 
+
+    <%= f.label :email %> 
+    <%= f.text_field :email %> 
+
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+
+    <%= f.label :password_confirmation %> 
+    <%= f.password_field :password_confirmation %> 
+
     <%= f.submit :Signup %>
   <% end %>
   <% if @user.errors.any? %>
