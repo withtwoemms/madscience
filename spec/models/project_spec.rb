@@ -1,6 +1,11 @@
 require 'rails_helper'
 describe Project do
   let!(:project) { build(:project) }
+  let!(:faculty_user) { build(:faculty_user) }
+
+  it "user should have position title of faculty" do
+    expect(faculty_user.position.title).to eq("faculty")
+  end
 
   it "project should belong to Project class" do
     expect(project.class.name).to eq("Project")
