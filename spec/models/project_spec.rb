@@ -19,10 +19,6 @@ describe Project do
     end
   end
 
-  it "user" do
-    expect(faculty_user.position.title).to eq("faculty")
-  end
-
   it "faculty projects have the correct creator position" do
     expect(faculty_project.creator.position.title).to eq("faculty")
   end
