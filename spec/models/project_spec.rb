@@ -1,14 +1,9 @@
 require 'rails_helper'
 describe Project do
-<<<<<<< Updated upstream
-  it "should work" do
-
-  end
-=======
   let!(:project) { build(:project) }
-  let!(:faculty_user) { build(:faculty_user) }
-  let!(:staff_user) { build(:staff_user) }
-
+  let!(:user) { build(:user) }
+  let!(:faculty_project) { build(:faculty_project) }
+  let!(:staff_project) { build(:staff_project) }
 
   it "project should belong to Project class" do
     expect(project.class.name).to eq("Project")
@@ -24,6 +19,11 @@ describe Project do
     end
   end
 
+  it "faculty projects have the correct creator position" do
+    expect(faculty_project.creator.position.title).to eq("faculty")
+  end
 
->>>>>>> Stashed changes
+  it "staff projects have the correct creator" do
+    expect(staff_project.creator.position.title).to eq("staff")
+  end
 end
