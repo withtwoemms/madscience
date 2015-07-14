@@ -13,7 +13,8 @@ class User < ActiveRecord::Base
   validates :email, presence: true, 
   									uniqueness: true, 
   									length: { maximum: 255 }, 
-  									format: { with: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/ }
+  									format: { with: /\A[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+\z/ }
+
 
   def name 
   	"#{self.first_name} #{self.last_name}"
