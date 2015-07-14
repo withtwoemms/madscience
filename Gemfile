@@ -52,5 +52,8 @@ group :development, :test do
 
   # Use SimpleCov for determining code coverage
   gem 'simplecov', '>= 0.9', :require => false
+
+  # Use Coveralls for determining code coverage
+  gem 'coveralls', require: false
 end
 
