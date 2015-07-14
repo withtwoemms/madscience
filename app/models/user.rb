@@ -7,4 +7,15 @@ class User < ActiveRecord::Base
   has_many :projects, through: :researcher_projects
   has_many :observations, through: :experiments
   has_many :procedures, through: :experiments
+
+  has_secure_password
+
+  validates :email, presence: true, 
+  									uniqueness: true, 
+  									length: { maximum: 255 }, 
+  									format: { with: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/ }
+
+  def name 
+  	"#{self.first_name} #{self.last_name}"
+  end
 end
