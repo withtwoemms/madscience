@@ -8,9 +8,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render "header" %>
-  <%= render "nav" %>
   <div class="container">
+  <%= render "./header" %>
+  <%= render partial: "./nav", locals: {projects: @projects} %>
     <%= yield %>
   </div>
 </body>
