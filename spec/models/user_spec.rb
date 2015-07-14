@@ -17,7 +17,7 @@ describe User do
 
   describe "#name" do
   	it "should return a full name" do 
-  		expect(generic_user.full_name).to eq("#{user.first_name} #{user.last_name}")
+  		expect(user.full_name).to eq("#{user.first_name} #{user.last_name}")
   	end
   end
 end
