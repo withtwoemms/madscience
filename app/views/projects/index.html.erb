@@ -1,0 +1,9 @@
+<p class="title">Projects</p>
+
+<% @projects.each do |project| %>
+  <div class="listing">
+    <p><%= link_to project.name, project_path(:id) %></p>
+    <p>Author: <%= link_to project.creator, user_path(:id) %>
+    <p class="fineprint"><%= project.experiments.count %> experiments posted</p>
+  </div>
+<% end %>
