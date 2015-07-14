@@ -223,3 +223,9 @@ DEPENDENCIES
   spring
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+<<<<<<< HEAD
+=======
+
+BUNDLED WITH
+   1.10.3
+>>>>>>> 79b77c49ae1592549f7319e70e1e8ba8171cddb8
