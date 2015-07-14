@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20150713201801) do
     t.string   "name"
     t.text     "results"
     t.text     "conclusion"
-    t.integer  "proposal_id"
+    t.integer  "project_id"
     t.integer  "experimenter_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 20150713201801) do
     t.datetime "updated_at"
   end
 
-  create_table "proposals", force: :cascade do |t|
+  create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.text     "summary"
     t.text     "hypothesis"
