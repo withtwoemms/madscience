@@ -1,0 +1,18 @@
+<p class="title"><%= @project.name %></p>
+<p>Author: <%= link_to @project.creator.full_name, user_path(@project.creator) %><p>
+<p>Hypothesis: <%= @project.hypothesis %></p>
+<p>Summary: <%= @project.summary %></p>
+
+<p class="titlesmall">Comments</p>
+
+<% @project.comments.each do |comment| %>
+  <p class="commentbody"><%= comment.content %>
+    <span class="fineprint">--<%= link_to comment.commenter.full_name, user_path(comment.commenter) %>
+    <%= comment.created_at.strftime(", %A, %d %b %Y %l:%M %p") %></span>
+  </p>
+<% end %>
+
+<%= form_tag("comment/new", id: "comment_button", method: "get") do %>
+  <%= submit_tag("Add a comment") %>
+<% end %>
+
