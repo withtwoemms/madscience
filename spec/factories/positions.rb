@@ -1,11 +1,9 @@
 FactoryGirl.define do
-  factory :position do
-    trait :faculty do
-      title "faculty"
-    end
+  factory :faculty, class: Position do
+    title "faculty"
+  end
 
-    trait :staff do
-      title "staff"
-    end
+  factory :staff, class: Position do
+    title "staff"
   end
 end

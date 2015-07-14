@@ -6,7 +6,11 @@ FactoryGirl.define do
     password "password"
   end
 
-  factory :faculty_user do
-    association :user, :faculty
+  factory :faculty_user, class: User do
+    association :position, factory: :faculty
+  end
+
+  factory :staff_user, class: User do
+    association :position, factory: :staff
   end
 end
