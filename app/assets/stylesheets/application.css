@@ -211,6 +211,14 @@ nav {
   font-size: 0.5em;
 }
 
+.commentobservation {
+  border-bottom: 1px solid #ccc;
+  padding: 0 1em 1em 3em;
+  margin-bottom: 1em;
+  font-size: 0.5em;
+  color: DimGray;
+}
+
 /* --------------------------------------- Layout: Everything else */
 
 .listing {
