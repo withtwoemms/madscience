@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   	@user = User.find_by(email: session_params[:email])
   	if @user && @user.authenticate(session_params[:password])
   		log_in @user # => SESSION COOKIE(S) BAKED!
-  		redirect_to :controller => "projects", :action => "index"
+      redirect_to user_path(@user)
   	else
 	  	render 'new'
 	  end
