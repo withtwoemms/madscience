@@ -4,6 +4,8 @@ A DBC project by Joe Awad, Emmanuel Obi and Jason Pettus
 
 [Public scrum board at Trello]: https://trello.com/b/JfbTCBPv/lab-experiment-tracker
 
+[![Build Status](https://travis-ci.org/withtwoemms/madscience.svg)](https://travis-ci.org/withtwoemms/madscience)
+
 ### User Stories
 
 * As a faculty member, I want to...
