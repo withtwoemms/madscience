@@ -6,7 +6,7 @@ FactoryGirl.define do
       association :observable, factory: :full_experiment
     end
 
-    factory :observed_procedure, class Observation do
+    factory :observed_procedure, class: Observation do
       association :observable, factory: :full_procedure
     end
   end
