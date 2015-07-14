@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   									format: { with: /\A[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+\z/ }
 
 
-  def name 
+  def full_name 
   	"#{self.first_name} #{self.last_name}"
   end
 end

@@ -1,0 +1,13 @@
+<% provide :title, "Faculty Signup" %>
+<div class="signup_form">
+  <h1>Faculty Login</h1>
+  <%= form_for :user, :url => { :controller => 'users', :action => 'create' } do |f| %>
+    <%= f.label :email %> 
+    <%= f.text_field :email %> 
+
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+
+    <%= f.submit :Login %>
+  <% end %>
+</div>

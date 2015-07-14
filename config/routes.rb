@@ -5,9 +5,7 @@ Rails.application.routes.draw do
     resources :experiments, except: :index
   end
 
-  resources :users do
-    resources :projects 
-  end
+  resources :users
 
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
@@ -17,7 +15,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'sessions#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

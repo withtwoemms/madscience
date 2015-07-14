@@ -17,9 +17,12 @@
     <%= f.label :password_confirmation %> 
     <%= f.password_field :password_confirmation %> 
 
+    <%= f.label "Faculty?" %> 
+    <%= f.check_box :position %>
+
     <%= f.submit :Signup %>
   <% end %>
-  <% if @user.errors.any? %>
+  <% if @new_user.errors.any? %>
     <ul class="signup_Errors">
     <% for message_error in @user.errors.full_messages %>
       <li> <%= message_error %></li>
