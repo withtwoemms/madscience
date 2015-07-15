@@ -118,7 +118,7 @@ nav {
     border-bottom: none;
 }
 
-/* --------------------------------------- Layout: questions, answers and comments */
+/* --------------------------------------- Layout: experiment and comment elements */
 
 .questiontitle {
   width: 100%;
@@ -189,6 +189,17 @@ nav {
 #comment_button:hover {
   color: DarkSalmon;
 }
+
+#experiment_button {
+  padding-top: 1em;
+  font-size: 0.75em;
+}
+
+#experiment_button:hover {
+  color: DarkSalmon;
+}
+
+
 
 /* --------------------------------------- Layout: Everything else */
 
