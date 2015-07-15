@@ -3,7 +3,10 @@ Rails.application.routes.draw do
 
   resources :projects do
     resources :experiments, except: :index do
-      resources :procedures, except: [:index, :show]
+      resources :procedures, except: [:index, :show] do
+        resources :observations, except: [:index, :show], controller: 'procedure_observations'
+      end
+      resources :observations, except: [:index, :show], controller: 'experiment_observations'
     end
   end
 
