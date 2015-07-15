@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-	def index 
+	def index
 		@projects = Project.all
 	end
 
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   	# new faculty
   	@new_user = User.new(user_params)
 
-  	if position_params 
+  	if position_params
   		@new_user.position = Position.find_by(title: "faculty")
   	else
   		@new_user.position = Position.find_by(title: "staff")
@@ -48,5 +48,5 @@ private
 
 	def is_faculty?
 		@user.position.title == "faculty"
-	  end
+	end
 end

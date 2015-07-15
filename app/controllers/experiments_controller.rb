@@ -16,7 +16,7 @@ class ExperimentsController < ApplicationController
   end
 
   def create
-    if staff?
+    if is_staff?
       @experiment = @project.experiments.build(experiment_params)
 
       if @experiment.save
@@ -57,6 +57,10 @@ class ExperimentsController < ApplicationController
   end
 
 private
+  def is_staff?
+    @user.position.title == "staff"
+  end
+
   def set_experiment
     @experiment = Experiment.find_by(id: params[:id])
   end
