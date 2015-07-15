@@ -1,4 +1,3 @@
-<p class="title"><%= @experiment.name %></p>
 <p>Author: <%= link_to @experiment.experimenter.full_name, user_path(@experiment.experimenter) %><p>
 <p>In Response to Proposal: <%= link_to @experiment.project.name, project_path(@experiment.project) %></p>
 <p>Date: <%= @experiment.created_at.strftime("%A, %d %b %Y") %></p>
