@@ -1,6 +1,6 @@
 <h1><%= @user.full_name %>'s <%= @user.position.title.capitalize %> Profile</h1>
 
 <hr>
-<% if @user.is_faculty?%>
+<% if is_faculty?%>
 	<%= link_to "Add Researcher", new_user_path %>
 <% end %>
