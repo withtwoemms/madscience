@@ -42,8 +42,4 @@ private
 			return params.require(:position).permit(:title)
 		end
 	end
-
-	def is_faculty?
-		@user.position.title == "faculty"
-	end
 end
