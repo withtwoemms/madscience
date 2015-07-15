@@ -5,7 +5,6 @@ class ObservationsController < ApplicationController
 
   def new
     @observation = Observation.new
-    render 'observations/new'
   end
 
   def procedure_create
@@ -30,7 +29,6 @@ class ObservationsController < ApplicationController
   end
 
   def edit
-    render 'observations/edit'
   end
 
   def update
