@@ -1,0 +1,15 @@
+<div class="tabs">
+  <ul>
+    <li id="conclusions"><a href="conclusions.html">Conclusions</a></li>
+    <li id="results" class="active"><a href="results.html">Results</a></li>
+    <li id="observations"><a href="observations.html">Observations</a></li>
+    <li id="procedures"><a href="procedures.html">Procedures</a></li>
+    <li id="summary"><a href="show.html">Summary</a></li>
+  </ul>
+</div>
+
+<p class="title"><%= @experiment.name %></p>
+<div id="experiment_content">
+  <p class="title">Results</p>
+  <p><%= @experiment.results %></p>
+</div>
