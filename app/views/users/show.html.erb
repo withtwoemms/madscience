@@ -1,6 +1,14 @@
-<h1><%= @user.full_name %>'s <%= @user.position.title.capitalize %> Profile</h1>
+<h1><%= @show_user.full_name %>'s <%= @show_user.position.title.capitalize %> Profile</h1>
 
 <hr>
+
+	<% @projects.each do |project| %>
+		<%= link_to "#{ project.name }", project_path %>
+	<% end %>
+
+	<hr>
 <% if is_faculty?%>
-	<%= link_to "Add Researcher", new_user_path %>
+	<%= link_to "Add Researcher", new_user_path %> | <%= link_to "Edit Profile", edit_user_path %>
 <% end %>
+
+

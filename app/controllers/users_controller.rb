@@ -4,6 +4,8 @@ class UsersController < ApplicationController
 	end
 
 	def show
+    @show_user = User.find_by(id: params[:id])
+    @projects = Project.where(creator: @show_user)
   end
 
   def new
@@ -15,6 +17,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    # render 'edit'
   end
 
   def create 
