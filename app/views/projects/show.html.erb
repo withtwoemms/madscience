@@ -16,3 +16,17 @@
   <%= submit_tag("Add a comment") %>
 <% end %>
 
+<p class="titlesmall">Experiments</p>
+
+<% @project.experiments.each do |experiment| %>
+  <div class="listing">
+    <p><%= link_to experiment.name, project_experiment_path(@project, experiment) %></p>
+    <p class="fineprint"><%= experiment.created_at.strftime("Posted on %A, %d %b %Y %l:%M %p") %>
+      by <%= link_to experiment.experimenter.full_name, user_path(experiment.experimenter) %>
+    </p>
+  </div>
+<% end %>
+
+<%= form_tag("experiment/new", id: "experiment_button", method: "get") do %>
+  <%= submit_tag("Add an Experiment") %>
+<% end %>
