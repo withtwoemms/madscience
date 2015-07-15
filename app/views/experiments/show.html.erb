@@ -8,22 +8,7 @@
   </ul>
 </div>
 
-<div id="experiment_content">
-
 <p class="title"><%= @experiment.name %></p>
-<p>Author: <%= link_to @experiment.experimenter.full_name, user_path(@experiment.experimenter) %><p>
-<p>In Response to Proposal: <%= link_to @experiment.project.name, project_path(@experiment.project) %></p>
-<p>Date: <%= @experiment.created_at.strftime("%A, %d %b %Y") %></p>
-
-<p class="titlesmall">Comments</p>
-
-<% @experiment.comments.each do |comment| %>
-  <p class="commentbody"><%= comment.content %>
-    <span class="fineprint">--<%= link_to comment.commenter.full_name, user_path(comment.commenter) %>
-    <%= comment.created_at.strftime(", %A, %d %b %Y %l:%M %p") %></span>
-  </p>
-<% end %>
-
-<%= render "comment_button" %>
+<div id="experiment_content">
 
 </div>

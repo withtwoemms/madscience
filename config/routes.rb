@@ -4,12 +4,22 @@ Rails.application.routes.draw do
   resources :projects do
     resources :experiments, except: :index do
       resources :procedures, except: [:index, :show] do
-        resources :observations, except: [:index, :show, :create]
-        post '/projects/:project_id/experiments/:experiment_id/procedures/:procedure_id/observations', to: 'observations#procedure_create'
+        post '/observations', to: 'observations#procedure_create'
+        resources :observations, except: [:index, :show, :create] do
+          resources :comments, except: [:index, :show, :create]
+          post '/comments', to: 'comments#observation_create'
+        end
       end
-      resources :observations, except: [:index, :show, :create]
-      post '/projects/:project_id/experiments/:experiment_id/observations', to: 'observations#experiment_create'
+      post '/observations', to: 'observations#experiment_create'
+      resources :observations, except: [:index, :show, :create] do
+        resources :comments, except: [:index, :show, :create]
+          post '/comments', to: 'comments#observation_create'
+      end
+      resources :comments, except: [:index, :show, :create]
+        post '/comments', to: 'comments#experiment_create'
     end
+    resources :comments, except: [:index, :show, :create]
+      post '/comments', to: 'comments#project_create'
   end
 
   resources :users
