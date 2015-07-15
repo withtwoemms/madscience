@@ -14,6 +14,7 @@ RSpec.describe UsersController, :type => :controller do
   	let!(:user) { build(:user) }
     it "returns http success" do
       expect(response).to render_template("/users/new")
+      controller.should_receive(:render).with(:partial => 'path/to/partial')
     end
   end
 
