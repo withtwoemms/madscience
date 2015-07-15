@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-	def index 
+	def index
 		@projects = Project.all
 	end
 
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   	@new_user = User.new(user_params)
     puts ">" * 50 + @new_user
 
-  	if position_params 
+  	if position_params
   		@new_user.position = Position.find_by(title: "faculty")
   	else
   		@new_user.position = Position.find_by(title: "staff")
@@ -48,5 +48,9 @@ private
 		if params[:position]
 			return params.require(:position).permit(:title)
 		end
+	end
+
+	def is_faculty?
+		@user.position.title == "faculty"
 	end
 end
