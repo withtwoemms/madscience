@@ -2,7 +2,24 @@ Rails.application.routes.draw do
   get 'sessions/new'
 
   resources :projects do
-    resources :experiments, except: :index
+    resources :experiments, except: :index do
+      resources :procedures, except: [:index, :show] do
+        post '/observations', to: 'observations#procedure_create'
+        resources :observations, except: [:index, :show, :create] do
+          resources :comments, except: [:index, :show, :create]
+          post '/comments', to: 'comments#observation_create'
+        end
+      end
+      post '/observations', to: 'observations#experiment_create'
+      resources :observations, except: [:index, :show, :create] do
+        resources :comments, except: [:index, :show, :create]
+          post '/comments', to: 'comments#observation_create'
+      end
+      resources :comments, except: [:index, :show, :create]
+        post '/comments', to: 'comments#experiment_create'
+    end
+    resources :comments, except: [:index, :show, :create]
+      post '/comments', to: 'comments#project_create'
   end
 
   resources :users
