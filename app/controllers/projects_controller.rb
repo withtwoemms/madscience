@@ -2,23 +2,35 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index
+    unless @user
+      render_404
+    end
     @projects = Project.all
   end
 
   def show
+    unless @user
+      render_404
+    end
   end
 
   def new
+    unless @user
+      render_404
+    end
     @project = Project.new
   end
 
   def create
+    unless @user
+      render_404
+    end
     @project = @user.projects.build(project_params)
 
     if @project.save
-      redirect_to project_path(@project.id)
+      redirect_to project_path(@project)
     else
-      render "projects/new"
+      render new_project_path
     end
   end
 
@@ -33,7 +45,7 @@ class ProjectsController < ApplicationController
       if @project.update_attributes(project_params)
         redirect_to project_path(@project)
       else
-        render "projects/edit"
+        render edit_project_path(@project)
       end
     else
       render_404
