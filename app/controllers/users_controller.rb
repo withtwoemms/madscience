@@ -1,30 +1,23 @@
 class UsersController < ApplicationController
 
 	def index
-		@projects = Project.all
 	end
 
 	def show
-    @user = User.find_by(id: session[:id])
-    @user
   end
 
   def new
-    if @user.is_faculty?
-      render 'new'
+    if is_faculty?
+      @new_user = User.new
+    else
+      render_404
     end
   end
 
   def edit
-    @user
   end
 
   def create 
-    puts "hello!"
-    puts ">" * 50 + user_params
-  	@new_user = User.new(user_params)
-    puts ">" * 50 + @new_user
-
   	if position_params
   		@new_user.position = Position.find_by(title: "faculty")
   	else
