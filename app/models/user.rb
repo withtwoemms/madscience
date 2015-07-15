@@ -19,4 +19,8 @@ class User < ActiveRecord::Base
   def full_name
   	"#{self.first_name} #{self.last_name}"
   end
+
+  def is_faculty?
+    self.position.title == "faculty"
+  end
 end
