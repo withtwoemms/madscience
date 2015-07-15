@@ -1,17 +1,24 @@
 class ExperimentsController < ApplicationController
-  before_action :set_experiment, only: [:show, :edit, :update, :destroy]
+  before_action :user?
+  before_action :set_experiment, except: [:new, :create]
   before_action :set_project
 
   def show
-    unless @user
-      render_404
-    end
+  end
+
+  def conclusions
+  end
+
+  def results
+  end
+
+  def observations
+  end
+
+  def procedures
   end
 
   def new
-    unless @user
-      render_404
-    end
     @experiment = Experiment.new
   end
 
@@ -57,6 +64,12 @@ class ExperimentsController < ApplicationController
   end
 
 private
+  def user?
+    unless @user
+      render_404
+    end
+  end
+
   def is_staff?
     @user.position.title == "staff"
   end
