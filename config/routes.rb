@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   resources :projects do
     resources :experiments, except: :index do
       resources :procedures, except: [:index, :show] do
-        resources :observations, except: [:index, :show], controller: 'procedure_observations'
+        resources :observations, except: [:index, :show, :create]
+        post '/projects/:project_id/experiments/:experiment_id/procedures/:procedure_id/observations', to: 'observations#procedure_create'
       end
-      resources :observations, except: [:index, :show], controller: 'experiment_observations'
+      resources :observations, except: [:index, :show, :create]
+      post '/projects/:project_id/experiments/:experiment_id/observations', to: 'observations#experiment_create'
     end
   end
 
