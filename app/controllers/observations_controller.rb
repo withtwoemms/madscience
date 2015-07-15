@@ -1,4 +1,4 @@
-class ExperimentObservationsController < ApplicationController
+class ObservationsController < ApplicationController
   before_action :authorized?
   before_action :set_experiment
   before_action :set_observation, only: [:edit, :update, :destroy]
@@ -8,7 +8,18 @@ class ExperimentObservationsController < ApplicationController
     render 'observations/new'
   end
 
-  def create
+  def procedure_create
+    procedure = Procedure.find_by(id: params[:procedure_id])
+    @observation = procedure.observations.build(observation_params)
+
+    if @observation.save
+      redirect_to project_experiment_path(@experiment.project, @experiment)
+    else
+      render 'observations/new'
+    end
+  end
+
+  def experiment_create
     @observation = @experiment.observations.build(observation_params)
 
     if @observation.save
