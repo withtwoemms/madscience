@@ -1,12 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe UsersController, :type => :controller do
+# RSpec.describe UsersController, :type => :controller do
 
-  describe "GET new" do
-    it "returns http success" do
-      get :new
-      expect(response).to be_success
-    end
-  end
+#   describe "GET new" do
+#   	let!(:faculty_user) { build(:faculty_user) } 
 
-end
+#     it "returns http success" do
+#       get :new, { user: faculty_user }
+#       expect(response).to be_success
+#     end
+#   end
+
+# end
