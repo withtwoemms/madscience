@@ -18,10 +18,10 @@ Rails.application.routes.draw do
       resources :comments, except: [:index, :show, :create]
         post '/comments', to: 'comments#experiment_create'
     end
-    get '/conclusions', to: 'experiments#conclusions'
-    get '/results', to: 'experiments#results'
-    get '/observations', to: 'experiments#observations'
-    get '/procedures', to: 'experiments#procedures'
+    get '/experiments/:id/conclusions', to: 'experiments#conclusions', as: 'conclusions'
+    get '/experiments/:id/results', to: 'experiments#results', as: 'results'
+    get '/experiments/:id/observations', to: 'experiments#observations', as: 'observations'
+    get '/experiments/:id/procedures', to: 'experiments#procedures', as: 'procedures'
     resources :comments, except: [:index, :show, :create]
       post '/comments', to: 'comments#project_create'
   end
