@@ -113,7 +113,7 @@ nav {
 }
 
 .tabs li.active a {
-    color: black;
+    color: white;
     text-decoration: none;
     border-bottom: none;
 }

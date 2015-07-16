@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def create 
+  def create
   	if position_params
   		@new_user.position = Position.find_by(title: "faculty")
   	else

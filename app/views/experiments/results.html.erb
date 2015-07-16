@@ -1,0 +1,15 @@
+<div class="tabs">
+  <ul>
+    <li id="conclusions"><%= link_to "Conclusions", project_conclusions_path(@project, @experiment) %></li>
+    <li id="results" class="active"><%= link_to "Results", project_results_path(@project, @experiment) %></li>
+    <li id="observations"><%= link_to "Observations", project_observations_path(@project, @experiment) %></li>
+    <li id="procedures"><%= link_to "Procedures", project_procedures_path(@project, @experiment) %></li>
+    <li id="summary"><%= link_to "Summary", project_experiment_path(@project, @experiment) %></li>
+  </ul>
+</div>
+
+<p class="title"><%= @experiment.name %></p>
+<div id="experiment_content">
+  <p class="title">Results</p>
+  <p><%= @experiment.results %></p>
+</div>
