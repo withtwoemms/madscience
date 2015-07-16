@@ -12,7 +12,7 @@
   </p>
 <% end %>
 
-<%= form_tag("comment/new", id: "comment_button", method: "get") do %>
+<%= form_tag(new_project_comment_path(@project), id: "comment_button", method: "get") do %>
   <%= submit_tag("Add a comment") %>
 <% end %>
 
@@ -27,6 +27,6 @@
   </div>
 <% end %>
 
-<%= form_tag("experiment/new", id: "experiment_button", method: "get") do %>
+<%= form_tag(new_project_experiment_path(@project), id: "experiment_button", method: "get") do %>
   <%= submit_tag("Add an Experiment") %>
 <% end %>
