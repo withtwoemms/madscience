@@ -17,7 +17,10 @@ class UsersController < ApplicationController
   end
 
   def edit
-    # render 'edit'
+  end
+
+  def update
+    @user.update_attributes(user_params)
   end
 
   def create 

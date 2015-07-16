@@ -1,22 +1,29 @@
 <% provide :title, "Faculty Edit" %>
-<div class="signup_form">
+<div class="form">
   <h1>Faculty Edit</h1>
-  <%= form_for :new_user, :url => { :controller => 'users', :action => 'create' } do |f| %>
+  <%= form_for :user, :url => { :controller => 'users', :action => 'update', method: 'put' } do |f| %>
   	<%= f.label :first_name %>
-  	<%= f.text_field :first_name %>
+  	<p><%= f.text_field :first_name, value: @user.first_name %></p>
 
     <%= f.label :last_name %> 
-    <%= f.text_field :last_name %> 
+    <p><%= f.text_field :last_name, value: @user.last_name %></p>
 
     <%= f.label :email %> 
-    <%= f.text_field :email %> 
+    <p><%= f.text_field :email, value: @user.email %></p>
 
     <%= f.label :password %>
-    <%= f.password_field :password %>
+    <p><%= f.password_field :password %></p>
 
     <%= f.label :password_confirmation %> 
-    <%= f.password_field :password_confirmation %> 
+    <p><%= f.password_field :password_confirmation %></p> 
 
     <%= f.submit "Edit Profile" %>
+  <% end %>
+  <% if @user.errors.any? %>
+    <ul class="form_errors">
+    <% for message_error in @user.errors.full_messages %>
+      <li> <%= message_error %></li>
+    <% end %>
+    </ul>
   <% end %>
 </div>
