@@ -1,30 +1,30 @@
 <% provide :title, "Faculty Signup" %>
-<div class="signup_form">
+<div class="form">
   <h1>Faculty Sign Up</h1>
   <%= form_for :new_user, :url => { :controller => 'users', :action => 'create' } do |f| %>
   	<%= f.label :first_name %>
-  	<%= f.text_field :first_name %>
+  	<p><%= f.text_field :first_name %></p>
 
     <%= f.label :last_name %> 
-    <%= f.text_field :last_name %> 
+    <p><%= f.text_field :last_name %></p>
 
     <%= f.label :email %> 
-    <%= f.text_field :email %> 
+    <p><%= f.text_field :email %></p>
 
     <%= f.label :password %>
-    <%= f.password_field :password %>
+    <p><%= f.password_field :password %></p>
 
     <%= f.label :password_confirmation %> 
-    <%= f.password_field :password_confirmation %> 
+    <p><%= f.password_field :password_confirmation %></p>
 
     <%= f.label "Faculty?" %> 
     <%= f.check_box :position %>
 
-    <%= f.submit "Register Researcher" %>
+    <p><%= f.submit "Register Researcher" %></p>
   <% end %>
   <% if @new_user.errors.any? %>
-    <ul class="signup_Errors">
-    <% for message_error in @user.errors.full_messages %>
+    <ul class="form_errors">
+    <% for message_error in @new_user.errors.full_messages %>
       <li> <%= message_error %></li>
     <% end %>
     </ul>
