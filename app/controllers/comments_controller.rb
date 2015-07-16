@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
   def observation_create
     @observation = Observation.find_by(id: params[:observation_id])
     @comment = @observation.comments.build(comment_params)
+    @comment.commenter = @user
 
     if @comment.save
       redirect_to project_experiment_path(@project, @experiment)
@@ -20,6 +21,7 @@ class CommentsController < ApplicationController
 
   def experiment_create
     @comment = @experiment.comments.build(comment_params)
+    @comment.commenter = @user
 
     if @comment.save
       redirect_to project_experiment_path(@project, @experiment)
@@ -30,6 +32,7 @@ class CommentsController < ApplicationController
 
   def project_create
     @comment = @project.comments.build(comment_params)
+    @comment.commenter = @user
 
     if @comment.save
       redirect_to project_path(@project)

@@ -25,7 +25,8 @@ class ProjectsController < ApplicationController
     unless @user
       render_404
     end
-    @project = @user.projects.build(project_params)
+    @project = Projects.build(project_params)
+    @project.creator = @user
 
     if @project.save
       redirect_to project_path(@project)
