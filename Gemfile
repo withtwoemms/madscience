@@ -54,10 +54,10 @@ group :development, :test do
   gem 'factory_girl_rails'
 
   # Use SimpleCov for determining code coverage
-  gem 'simplecov', '>= 0.9', :require => false
+  gem 'simplecov', '>= 0.9'
 
   # Use Coveralls for determining code coverage
-  gem 'coveralls', require: false
+  gem 'coveralls'
   gem 'rake'
 end
 
