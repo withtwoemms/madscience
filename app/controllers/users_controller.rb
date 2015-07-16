@@ -20,7 +20,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.update_attributes(user_params)
+    if @user.update_attributes(user_params)
+      redirect_to @user
+    else
+      render 'edit'
+    end
   end
 
   def create 
