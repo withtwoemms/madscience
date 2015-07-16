@@ -3,19 +3,19 @@
   <h1>Faculty Edit</h1>
   <%= form_for @user, url: { :action => 'update' } do |f| %>
   	<%= f.label :first_name %>
-  	<p><%= f.text_field :first_name, value: @user.first_name %></p>
+  	<%= f.text_field :first_name, value: @user.first_name %><br>
 
     <%= f.label :last_name %>
-    <p><%= f.text_field :last_name, value: @user.last_name %></p>
+    <%= f.text_field :last_name, value: @user.last_name %><br>
 
     <%= f.label :email %>
-    <p><%= f.text_field :email, value: @user.email %></p>
+    <%= f.text_field :email, value: @user.email %><br>
 
     <%= f.label :password %>
-    <p><%= f.password_field :password %></p>
+    <%= f.password_field :password %><br>
 
     <%= f.label :password_confirmation %>
-    <p><%= f.password_field :password_confirmation %></p> 
+    <%= f.password_field :password_confirmation %><br> 
 
     <%= f.submit "Edit Profile" %>
   <% end %>
