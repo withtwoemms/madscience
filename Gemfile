@@ -58,5 +58,6 @@ group :development, :test do
 
   # Use Coveralls for determining code coverage
   gem 'coveralls', require: false
+  gem 'rake'
 end
 
