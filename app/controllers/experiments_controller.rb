@@ -25,6 +25,7 @@ class ExperimentsController < ApplicationController
   def create
     if is_staff?
       @experiment = @project.experiments.build(experiment_params)
+      @experiment.experimenter = @user
 
       if @experiment.save
         redirect_to project_experiment_path(@project, @experiment)
